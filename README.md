@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# REST API with Next.js and JSONPlaceholder
 
-## Getting Started
+This project is a REST API built using Next.js, leveraging the `next/server` module and integrating with the JSONPlaceholder API as a mock backend. The API allows users to perform CRUD operations on a collection of to-dos.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **GET**: Retrieve all to-dos.
+- **POST**: Add a new to-do.
+- **PUT**: Update an existing to-do.
+- **DELETE**: Remove a to-do.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Endpoints
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### GET `/api/todos`
+Fetch all to-dos from the JSONPlaceholder API.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#### Response
+- Returns an array of to-dos.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+### POST `/api/todos`
+Add a new to-do to the JSONPlaceholder API.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+#### Request Body
+```json
+{
+  "title": "Your new to-do"
+}
